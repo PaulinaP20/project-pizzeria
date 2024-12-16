@@ -53,17 +53,18 @@ const select = {
   };
 
   class Product {
+    //constructor=create a new object
     constructor(id,data){
-      const thisProduct=this;
+      const thisProduct=this; //every single product
 
-      thisProduct.id=id;
-      thisProduct.data=data;
+      thisProduct.id=id;// np pizza
+      thisProduct.data=data;//np price, name, params:
 
-      thisProduct.renderInMenu();
-      thisProduct.getElements();
-      thisProduct.initAccordion();
-      thisProduct.initOrderForm();
-      thisProduct.processOrder();
+      thisProduct.renderInMenu(); //rendering products on the website
+      thisProduct.getElements(); //get DOM elements
+      thisProduct.initAccordion(); // folding and unfolding products
+      thisProduct.initOrderForm();//setting up the order form
+      thisProduct.processOrder(); //calculating price of the products
 
 
       console.log('new Product:', thisProduct);
@@ -100,6 +101,8 @@ const select = {
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
 
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+
+      thisProduct.imageWrapper=thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
 
@@ -190,6 +193,17 @@ const select = {
             if (option.default)
               price-=option.price;
           }
+
+          const optionImage=thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
+
+          if (optionImage){
+            if (optionSelected){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+            else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
         }
       }
       // update calculated price in the HTML
@@ -198,7 +212,9 @@ const select = {
   }
 
   const app = {
+
     initMenu: function (){
+      // this method create for every product ,,new Product"->menu
       const thisApp=this;
 
       console.log('thisApp.data:',thisApp.data);
@@ -208,6 +224,7 @@ const select = {
       }
     },
 
+    //get data from dataSource (data.js);
     initData: function (){
       const thisApp=this;
 
@@ -227,5 +244,6 @@ const select = {
     },
   };
 
+  //start app (the first step)
   app.init();
 }
