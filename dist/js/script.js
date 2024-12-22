@@ -63,9 +63,12 @@ const select = {
       thisProduct.renderInMenu(); //rendering products on the website
       thisProduct.getElements(); //get DOM elements
       thisProduct.initAccordion(); // folding and unfolding products
+
       thisProduct.initOrderForm();//setting up the order form
       //calculating price of the products
+
       thisProduct.initAmountWidget();
+      thisProduct.processOrder();
 
 
       //console.log('new Product:', thisProduct);
