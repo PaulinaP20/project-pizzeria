@@ -391,7 +391,9 @@ class AmountWidget {
   announce(){
     const thisWidget=this;
 
-    const event=new Event('updated');
+    const event=new CustomEvent('updated', {
+      bubbles:true
+    });
     thisWidget.element.dispatchEvent(event);
 
   }
@@ -421,16 +423,16 @@ class Cart {
     thisCart.dom.productList=thisCart.dom.wrapper.querySelector(select.cart.productList);
 
     thisCart.dom.deliveryFee=thisCart.dom.wrapper.querySelector(select.cart.deliveryFee);
-    console.log(thisCart.dom.deliveryFee);
+   // console.log(thisCart.dom.deliveryFee);
 
     thisCart.dom.subtotalPrice=thisCart.dom.wrapper.querySelector(select.cart.subtotalPrice);
-    console.log(select.cart.subtotalPrice);
+    //console.log(select.cart.subtotalPrice);
 
     thisCart.dom.totalPrice=thisCart.dom.wrapper.querySelectorAll(select.cart.totalPrice);
-    console.log(thisCart.dom.totalPrice);
+    //console.log(thisCart.dom.totalPrice);
 
     thisCart.dom.totalNumber=thisCart.dom.wrapper.querySelector(select.cart.totalNumber);//OK
-    console.log(thisCart.dom.totalNumber);
+    //console.log(thisCart.dom.totalNumber);
 
 
 
@@ -442,6 +444,9 @@ class Cart {
     thisCart.dom.toggleTrigger.addEventListener('click', function(){
       //add active class
       thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+    });
+    thisCart.dom.productList.addEventListener('updated',function(){
+      thisCart.update();
     });
   }
 
