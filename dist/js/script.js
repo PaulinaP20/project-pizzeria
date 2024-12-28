@@ -280,6 +280,16 @@
       const cartProduct=thisProduct.prepareCartProduct();
 
       app.cart.add(cartProduct);
+      thisProduct.resetToDefault();
+    }
+
+    resetToDefault() {
+      const thisProduct=this;
+
+      thisProduct.dom.form.reset();
+      thisProduct.amountWidget.setValue(settings.amountWidget.defaultValue);
+
+      thisProduct.processOrder();
     }
 
     prepareCartProduct(){
