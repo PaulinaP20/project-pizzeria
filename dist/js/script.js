@@ -585,6 +585,22 @@ class Cart {
       }).then(function(parsedResponse){
         console.log('parsedResponse',parsedResponse)
       });
+
+      thisCart.clearCart();
+  }
+
+  clearCart(){
+    const thisCart=this;
+
+    thisCart.products=[];
+
+    thisCart.dom.productList.innerHTML="";
+
+    thisCart.totalPrice = 0;
+    thisCart.totalNumber = 0;
+    thisCart.deliveryFee = 0;
+
+    thisCart.update();
   }
 
 }
