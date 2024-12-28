@@ -478,6 +478,14 @@ class Cart {
       thisCart.remove(event.detail.cartProduct);
     });
 
+    thisCart.dom.phone.addEventListener('input', function(){
+      thisCart.validatePhone();
+    });
+
+    thisCart.dom.address.addEventListener('input',function(){
+      thisCart.validateAddress();
+    })
+
     thisCart.dom.form.addEventListener('submit',function(event){
       event.preventDefault();
       thisCart.sendOrder();
@@ -555,6 +563,16 @@ class Cart {
 
   sendOrder(){
     const thisCart=this;
+
+    if (thisCart.products.length===0) {
+      alert('Koszyk jest pusty! Przed wysłaniem zamówienia dodaj produkty do koszyka!')
+      return;
+    }
+
+    if(!thisCart.validatePhone()||!thisCart.validateAddress){
+      return false;
+    }
+
     const url = settings.db.url + '/' + settings.db.orders;
 
     const payload={
@@ -584,9 +602,34 @@ class Cart {
         return response.json();
       }).then(function(parsedResponse){
         console.log('parsedResponse',parsedResponse)
-      });
 
-      thisCart.clearCart();
+        thisCart.clearCart();
+      });
+  }
+
+  validatePhone(){
+    const thisCart=this;
+
+    if(thisCart.dom.phone.value.length<=9){
+      thisCart.dom.phone.classList.add('error');
+      thisCart.dom.phone.setAttribute('title','Minimalna długość znaków to 9');
+      return false;
+    } else {
+      thisCart.dom.phone.classList.remove('error');
+    }
+    return true
+  }
+
+  validateAddress(){
+    const thisCart=this;
+    if(thisCart.dom.address.value.length<=5){
+      thisCart.dom.address.classList.add('error');
+      thisCart.dom.address.setAttribute('title','Minimalna długość znaków to 5');
+      return false;
+    } else {
+      thisCart.dom.address.classList.remove('error');
+    }
+    return true;
   }
 
   clearCart(){
@@ -595,14 +638,11 @@ class Cart {
     thisCart.products=[];
 
     thisCart.dom.productList.innerHTML="";
-
-    thisCart.totalPrice = 0;
-    thisCart.totalNumber = 0;
-    thisCart.deliveryFee = 0;
+    thisCart.dom.phone.value="";
+    thisCart.dom.address.value="";
 
     thisCart.update();
   }
-
 }
 
 class CartProduct {
