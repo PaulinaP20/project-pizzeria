@@ -652,6 +652,7 @@ class Cart {
     thisCart.dom.address.value="";
 
     thisCart.update();
+    thisCart.cartAnimation();
   }
 
   cartAnimation(){
