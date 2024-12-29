@@ -545,6 +545,8 @@ class Cart {
     }
 
     thisCart.dom.totalNumber.innerHTML=thisCart.totalNumber;
+
+
   }
 
   remove(cartProduct){
@@ -610,7 +612,7 @@ class Cart {
   validatePhone(){
     const thisCart=this;
 
-    if(thisCart.dom.phone.value.length<=9){
+    if(thisCart.dom.phone.value.length<9){
       thisCart.dom.phone.classList.add('error');
       thisCart.dom.phone.setAttribute('title','Minimalna długość znaków to 9');
       return false;
@@ -622,7 +624,7 @@ class Cart {
 
   validateAddress(){
     const thisCart=this;
-    if(thisCart.dom.address.value.length<=5){
+    if(thisCart.dom.address.value.length<5){
       thisCart.dom.address.classList.add('error');
       thisCart.dom.address.setAttribute('title','Minimalna długość znaków to 5');
       return false;
@@ -643,6 +645,7 @@ class Cart {
 
     thisCart.update();
   }
+
 }
 
 class CartProduct {
