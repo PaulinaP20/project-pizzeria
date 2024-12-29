@@ -280,7 +280,9 @@
       const cartProduct=thisProduct.prepareCartProduct();
 
       app.cart.add(cartProduct);
+
       thisProduct.resetToDefault();
+
     }
 
     resetToDefault() {
@@ -495,7 +497,9 @@ class Cart {
   add(menuProduct){
     const thisCart=this;
 
-    console.log('adding product:', menuProduct);
+
+
+    //console.log('adding product:', menuProduct);
 
     /* generate HTML based on template */
     const generateHTML =templates.cartProduct(menuProduct);
@@ -513,6 +517,8 @@ class Cart {
     //console.log('thisCart.product:', thisCart.products);
 
     thisCart.update();
+    thisCart.cartAnimation();
+
   }
 
   update(){
@@ -546,11 +552,12 @@ class Cart {
 
     thisCart.dom.totalNumber.innerHTML=thisCart.totalNumber;
 
-
   }
 
   remove(cartProduct){
     const thisCart=this;
+
+    //thisCart.cartAnimation();
     //remove product from HTML
     cartProduct.dom.wrapper.remove();
 
@@ -561,6 +568,7 @@ class Cart {
     }
     //start update()
     thisCart.update();
+    thisCart.cartAnimation();
   }
 
   sendOrder(){
@@ -644,6 +652,19 @@ class Cart {
     thisCart.dom.address.value="";
 
     thisCart.update();
+  }
+
+  cartAnimation(){
+    const thisCart=this;
+    const cartSummary=document.querySelector('.cart__summary');
+
+    console.log(cartSummary);
+
+    if(thisCart.products.length>0){
+      cartSummary.classList.add('cart__summary-active');
+    } else {
+      cartSummary.classList.remove('cart__summary-active');
+    }
   }
 
 }

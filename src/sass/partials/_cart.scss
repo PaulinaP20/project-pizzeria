@@ -156,12 +156,12 @@
 
   }
 
-  .cart-updated {
+  .cart__summary {
     opacity: 0.5;
     transition: opacity 0.2s ease;
   }
 
-  .cart-updated-active {
+  .cart__summary-active {
     opacity: 1;
     transition: opacity 0.5s ease;
   }

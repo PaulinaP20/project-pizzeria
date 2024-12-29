@@ -383,11 +383,11 @@ input.error, select.error {
   width: 100%;
   margin-bottom: 6px;
 }
-.cart .cart-updated {
+.cart .cart__summary {
   opacity: 0.5;
   transition: opacity 0.2s ease;
 }
-.cart .cart-updated-active {
+.cart .cart__summary-active {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
