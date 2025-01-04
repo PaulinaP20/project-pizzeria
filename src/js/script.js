@@ -423,7 +423,7 @@ class Cart {
     thisCart.getElements(element);
     thisCart.initActions();
 
-    console.log('new Cart:', thisCart);
+    //console.log('new Cart:', thisCart);
   }
 
   getElements (element) {
@@ -455,11 +455,11 @@ class Cart {
     thisCart.dom.deliveryFee=thisCart.dom.wrapper.querySelector(select.cart.deliveryFee);
 
     thisCart.dom.subtotalPrice=thisCart.dom.wrapper.querySelector(select.cart.subtotalPrice);
-    console.log(thisCart.dom.subtotalPrice);
+    //console.log(thisCart.dom.subtotalPrice);
 
     thisCart.dom.address=thisCart.dom.wrapper.querySelector(select.cart.address);
 
-    console.log(thisCart.dom.address);
+    //console.log(thisCart.dom.address);
 
     thisCart.dom.phone=thisCart.dom.wrapper.querySelector(select.cart.phone);
 
@@ -785,7 +785,7 @@ class CartProduct {
           return rawResponse.json();
         })
         .then(function(parsedResponse){
-          console.log('parsedResponse',parsedResponse);
+          //console.log('parsedResponse',parsedResponse);
 
           //save parsedresponse as thisApp.data.products
           thisApp.data.products=parsedResponse;
@@ -794,7 +794,7 @@ class CartProduct {
           thisApp.initMenu();
         });
 
-        console.log('thisApp.data', JSON.stringify(thisApp.data));
+        //console.log('thisApp.data', JSON.stringify(thisApp.data));
     },
 
     init: function(){
