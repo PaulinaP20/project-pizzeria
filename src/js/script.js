@@ -160,7 +160,7 @@
       /* START: add event listener to clickable trigger on event click */
 
       thisProduct.dom.accordionTrigger.addEventListener('click', function(event){
-        console.log('clicked');
+        //console.log('clicked');
 
         /* prevent default action for event */
         event.preventDefault();
@@ -480,14 +480,6 @@ class Cart {
       thisCart.remove(event.detail.cartProduct);
     });
 
-    thisCart.dom.phone.addEventListener('input', function(){
-      thisCart.validatePhone();
-    });
-
-    thisCart.dom.address.addEventListener('input',function(){
-      thisCart.validateAddress();
-    })
-
     thisCart.dom.form.addEventListener('submit',function(event){
       event.preventDefault();
       thisCart.sendOrder();
@@ -532,7 +524,7 @@ class Cart {
     for(let product of thisCart.products){
       thisCart.totalNumber+=product.amountWidget.value;
       thisCart.subtotalPrice+=product.price
-      console.log(product.price);
+      //console.log(product.price);
     }
     if(thisCart.totalNumber>0){
       thisCart.totalPrice=thisCart.subtotalPrice+deliveryFee
@@ -579,10 +571,6 @@ class Cart {
       return;
     }
 
-    if(!thisCart.validatePhone()||!thisCart.validateAddress){
-      return false;
-    }
-
     const url = settings.db.url + '/' + settings.db.orders;
 
     const payload={
@@ -617,31 +605,6 @@ class Cart {
       });
   }
 
-  validatePhone(){
-    const thisCart=this;
-
-    if(thisCart.dom.phone.value.length<9){
-      thisCart.dom.phone.classList.add('error');
-      thisCart.dom.phone.setAttribute('title','Minimalna długość znaków to 9');
-      return false;
-    } else {
-      thisCart.dom.phone.classList.remove('error');
-    }
-    return true
-  }
-
-  validateAddress(){
-    const thisCart=this;
-    if(thisCart.dom.address.value.length<5){
-      thisCart.dom.address.classList.add('error');
-      thisCart.dom.address.setAttribute('title','Minimalna długość znaków to 5');
-      return false;
-    } else {
-      thisCart.dom.address.classList.remove('error');
-    }
-    return true;
-  }
-
   clearCart(){
     const thisCart=this;
 
@@ -659,7 +622,7 @@ class Cart {
     const thisCart=this;
     const cartSummary=document.querySelector('.cart__summary');
 
-    console.log(cartSummary);
+    //console.log(cartSummary);
 
     if(thisCart.products.length>0){
       cartSummary.classList.add('cart__summary-active');
@@ -696,7 +659,7 @@ class CartProduct {
     thisCartProduct.dom.wrapper=element;
 
     thisCartProduct.dom.amountWidget=thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
-    console.log(thisCartProduct.dom.amountWidget);
+    //console.log(thisCartProduct.dom.amountWidget);
     thisCartProduct.dom.price=thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
     thisCartProduct.dom.edit=thisCartProduct.dom.wrapper.querySelector(select.cartProduct.edit);
     thisCartProduct.dom.remove=thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
@@ -773,7 +736,7 @@ class CartProduct {
       }
     },
 
-    //get data from dataSource (data.js);
+    //get data from app.json;
     initData: function (){
       const thisApp=this;
 
