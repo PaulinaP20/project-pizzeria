@@ -152,9 +152,8 @@ class Booking {
                 table.classList.remove(classNames.booking.tableBooked);
             }
         }
-        for (let table of thisBooking.dom.tables){
-            table.classList.remove(classNames.booking.tableSelected);
-        }
+
+        thisBooking.resetSelectedTable();
     }
 
     render(){
@@ -229,16 +228,21 @@ class Booking {
                 clickedElem.classList.remove(classNames.booking.tableSelected);
                 thisBooking.selectedTable=null;
             } else {
-                for (let table of thisBooking.dom.tables){
-                    table.classList.remove(classNames.booking.tableSelected);
-                }
+                thisBooking.resetSelectedTable();
                 clickedElem.classList.add(classNames.booking.tableSelected);
                 thisBooking.selectedTable = tableId;
             }
-
-
             console.log(thisBooking.selectedTable);
         }
+    }
+
+    resetSelectedTable(){
+        const thisBooking=this;
+        for (let table of thisBooking.dom.tables){
+            table.classList.remove(classNames.booking.tableSelected);
+        }
+        thisBooking.selectedTable=null;
+        //console.log(thisBooking.selectedTable);
     }
 
 }
