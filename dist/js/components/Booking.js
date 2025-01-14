@@ -244,7 +244,7 @@ class Booking {
                 clickedElem.classList.add(classNames.booking.tableSelected);
                 thisBooking.selectedTable = tableId;
             }
-            console.log(thisBooking.selectedTable);
+            //console.log(thisBooking.selectedTable);
         }
     }
 
