@@ -1,0 +1,84 @@
+.home-information {
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:30px;
+    letter-spacing:3px;
+
+    .box {
+        flex:1 1 45%;
+        border:solid black;
+        padding:40px;
+    }
+
+    .order-online {
+        background-image: url('../images/assets/pizza-1.jpg');
+        background-size:cover;
+    }
+
+    .book-table {
+        background-image: url('../images/assets/pizza-1.jpg');
+        background-size:cover;
+    }
+
+    .order-online, .book-table {
+        background-color: black;
+        color:white;
+        font-size: 18px;
+        margin:0 3px;
+        position:relative;
+
+
+        h1 {
+            transition:transform 0.3 ease;
+            text-align: center;
+            font-weight:bold;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        }
+        .hidden-text {
+            font-size: 10px;
+            position: absolute;
+            white-space:nowrap;
+            left:50%;
+            bottom:50px;
+            opacity:0;
+            transform:translateX(-50%) translateY(-50%);
+            transition:opacity 0.5s ease, transform 0.5s ease;
+
+        }
+        &:hover h1 {
+            transform: translateY(-30px);
+            transition:transform 1 ease;
+        }
+
+        &:hover .hidden-text {
+            opacity: 1;
+            transform:translateX(-50%) translateY(50%);
+
+
+        }
+
+
+    }
+
+    .opening-hour {
+        width:100%;
+        padding:30px;
+        margin-top:10px;
+        background-color: coral;
+        color:white;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+
+        span {
+            display:block;
+            font-size: 15px;
+            font-weight: 300;
+            margin-top:10px;
+
+        }
+    }
+
+}
+
