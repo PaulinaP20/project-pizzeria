@@ -76,7 +76,7 @@ export const select = {
       remove: '[href="#remove"]',
     },
     home: {
-      carousel: '.carousel-wrapper',
+      carousel: '.carousel',
     }
 
   };

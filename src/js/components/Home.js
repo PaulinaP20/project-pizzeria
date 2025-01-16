@@ -30,13 +30,16 @@ class Home {
     initWidgets(){
         const thisHome=this;
 
-        thisHome.carousel= new Flickity (thisHome.dom.carousel,{
-            cellAlign: 'left',   // Wyrównanie elementów do lewej
-            contain: true,       // Zawijanie elementów w obrębie kontenera
-            autoplay: true,      // Automatyczne przesuwanie
-            prevNextButtons: true, // Dodanie przycisków "poprzedni" i "następny"
-            pageDots: true       // Dodanie kropek nawigacyjnych
+        thisHome.dom.carousel= new Flickity (thisHome.dom.carousel,{
+            contain: true,
+            pageDots: true,
+            wrapAround: true,
+            autoPlay: true,
+            prevNextButtons: false,
         });
+
+
+
 
 
 
