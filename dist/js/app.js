@@ -16,6 +16,7 @@ const app = {
     //console.log(idFromHash);
 
     let pageMatchingHash=thisApp.pages[0].id;
+    //console.log(pageMatchingHash);
 
     for (let page of thisApp.pages){
       if (page.id==idFromHash){
@@ -106,6 +107,7 @@ const app = {
       thisApp.initPages();
       thisApp.initBooking();
       thisApp.initHome();
+
   },
 
   initCart: function(){
@@ -132,7 +134,7 @@ const app = {
     const thisApp=this;
     const homePage=document.querySelector(select.containerOf.home);
 
-    console.log(homePage);
+    //console.log(homePage);
 
     thisApp.homePage=new Home(homePage);
   }

@@ -5,7 +5,7 @@ class Home {
         const thisHome=this;
         thisHome.element=element;
 
-        console.log(thisHome.element)
+        //console.log(thisHome.element)
 
         thisHome.render();
         thisHome.initWidgets();
@@ -30,18 +30,13 @@ class Home {
     initWidgets(){
         const thisHome=this;
 
-        thisHome.dom.carousel= new Flickity (thisHome.dom.carousel,{
+        thisHome.carousel= new Flickity (thisHome.dom.carousel,{
             contain: true,
             pageDots: true,
             wrapAround: true,
             autoPlay: true,
             prevNextButtons: false,
         });
-
-
-
-
-
 
     }
 

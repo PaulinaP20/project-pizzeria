@@ -13,157 +13,209 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+  <body>
 
-  <header class="header">
-    <div class="container">
-      <div class="header__wrapper">
-        <div class="logo">
-          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-          <h2 class="logo__subtitle">the best homemade Italian food</h2>
-        </div>
-        <div class="main-nav">
-          <a href="#home">Home</a>
-          <a href="#order">Order</a>
-          <a href="#booking">Booking</a>
-        </div>
-        <div id="cart" class="cart">
-          <div class="cart__summary">
-            <span class="cart__total-number">0</span>
-            <span class="cart__total-price">Total price: $<strong>0</strong></span>
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-shopping-cart cart__icon"></i>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
+            <h2 class="logo__subtitle">the best homemade Italian food</h2>
           </div>
-          <div class="cart__content">
-            <form class="cart__order">
-              <ul class="cart__order-summary no-spacing">
-              </ul>
-              <ul class="cart__order-price">
-                <li class="cart__order-subtotal">
-                  <span class="cart__order-price-name">Subtotal:</span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-                <li class="cart__order-delivery">
-                  <span class="cart__order-price-name">Delivery:</span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-                <li class="cart__order-total">
-                  <span class="cart__order-price-name"><strong>Total:</strong></span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-              </ul>
-              <div class="cart__order-confirmation">
-                <input type="tel" name="phone" placeholder="Your phone">
-                <input type="text" name="address" placeholder="Your address">
-                <button type="submit" class="btn-secondary">Order</button>
-              </div>
-            </form>
+          <div class="main-nav">
+            <a href="#home">Home</a>
+            <a href="#order">Order</a>
+            <a href="#booking">Booking</a>
+          </div>
+          <div id="cart" class="cart">
+            <div class="cart__summary">
+              <span class="cart__total-number">0</span>
+              <span class="cart__total-price">Total price: $<strong>0</strong></span>
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+            <div class="cart__content">
+              <form class="cart__order">
+                <ul class="cart__order-summary no-spacing">
+                </ul>
+                <ul class="cart__order-price">
+                  <li class="cart__order-subtotal">
+                    <span class="cart__order-price-name">Subtotal:</span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                    <li class="cart__order-delivery">
+                    <span class="cart__order-price-name">Delivery:</span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                  <li class="cart__order-total">
+                    <span class="cart__order-price-name"><strong>Total:</strong></span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                </ul>
+                <div class="cart__order-confirmation">
+                  <input type="tel" name="phone" placeholder="Your phone">
+                  <input type="text" name="address" placeholder="Your address">
+                  <button type="submit" class="btn-secondary">Order</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div id="pages">
-    <section id="home">
-      <div id="home-wrapper"></div>
-    </section>
-    <section id="order">
-      <div id="product-list" class="product-list container"></div>
-    </section>
-    <section id="booking">
-      <div class="booking-wrapper"></div>
-    </section>
+    <div id="pages">
+      <section id="home">
+        <div id="home-wrapper" class="home-wrapper container"></div>
+      </section>
+      <section id="order">
+        <div id="product-list" class="product-list container"></div>
+      </section>
+      <section id="booking">
+        <div class="booking-wrapper container"></div>
+      </section>
+    </div>
 
     <!--Home section-->
     <script id="template-home-page" type="text/x-handlebars-template">
-      <div class="home-wrapper container">
-        <div class="home-information">
-          <div class="box order-online">
-            <h1>ORDER ONLINE</h1>
-            <h2 class="hidden-text">Delicious food delivered to your door</h2>
+      <div class="home-information">
+        <div class="box order-online">
+          <h1>ORDER ONLINE</h1>
+          <h2 class="hidden-text">Delicious food delivered to your door</h2>
+        </div>
+        <div class="box book-table">
+          <h1>BOOK TABLE</h1>
+          <h2 class="hidden-text">Visit us!</h2>
+        </div>
+        <div class="box opening-hour">OPENING HOURS:  <span>TUE-SUN 12PM-12AM</span></div>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
           </div>
-          <div class="box book-table">
-            <h1>BOOK TABLE</h1>
-            <h2 class="hidden-text">Visit us!</h2>
+          <div class="carousel-text">
+            <h2>The best food</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat. </p>
           </div>
-          <div class="box opening-hour">OPENING HOURS: <span>TUE-SUN 12PM-12AM</span></div>
+        </div>
+      <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
+          </div>
+            <div class="carousel-text">
+              <h2>The best food</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
+          </div>
+          <div class="carousel-text">
+            <h2>The best food</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
+          </div>
+          <div class="carousel-text">
+            <h2>The best food</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-container">
+        <div class="photo">
+          <img src="../images/assets/pizza-4.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
+          </div>
         </div>
 
-        <div class="carousel">
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
-            </div>
-            <div class="carousel-text">
-              <h2>The best food</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat. </p>
-            </div>
-          </div>
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
-            </div>
-            <div class="carousel-text">
-              <h2>The best food</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
-            </div>
-          </div>
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
-            </div>
-            <div class="carousel-text">
-              <h2>The best food</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
-            </div>
-          </div>
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="../images/assets/pizza-3.jpg" alt="Carousel-Image">
-            </div>
-            <div class="carousel-text">
-              <h2>The best food</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pretium semper. Suspendisse purus libero, volutpat eget mollis quis, feugiat iaculis est. Aliquam erat volutpat.</p>
-            </div>
+        <div class="photo">
+          <img src="../images/assets/pizza-5.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
           </div>
         </div>
+
+        <div class="photo">
+          <img src="../images/assets/pizza-6.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="../images/assets/pizza-7.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="../images/assets/pizza-8.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="../images/assets/pizza-9.jpg">
+          <div class="overlay">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-share-alt"></i>
+          </div>
+        </div>
+
+        <div class="instagram">
+          <i>View more on instagram</i>
+        </div>
+
       </div>
     </script>
 
 
 
-  <script id="template-cart-product" type="text/x-handlebars-template">
-    <li>
-      <div class="widget-amount"> <!-- widget-amount -->
-        <a class="btn-quantity btn-quantity--lt" href="#less"><i class="fas fa-minus"></i></a>
+    <script id="template-cart-product" type="text/x-handlebars-template">
+      <li>
+        <div class="widget-amount"> <!-- widget-amount -->
+          <a class="btn-quantity btn-quantity--lt" href="#less"><i class="fas fa-minus"></i></a>
         <input class="amount" type="text" value="{{ amount }}">
-        <a class="btn-quantity btn-quantity--lt" href="#more"><i class="fas fa-plus"></i></a>
-      </div>
-      <div class="cart__product">
-        <div class="cart__product-header">
-          <span>{{ name }}</span>
-          <span>$<strong class="cart__product-price">{{ price }}</strong></span>
+          <a class="btn-quantity btn-quantity--lt" href="#more"><i class="fas fa-plus"></i></a>
         </div>
-        <ul class="cart__product-details no-spacing">
+        <div class="cart__product">
+          <div class="cart__product-header">
+            <span>{{ name }}</span>
+            <span>$<strong class="cart__product-price">{{ price }}</strong></span>
+          </div>
+          <ul class="cart__product-details no-spacing">
           {{#each params}}
-            <li>
-              <span class="cart__product-details-label">{{ label }}</span>
-              <span>{{#joinValues options}}, {{/joinValues}}</span>
-            </li>
+             <li>
+                <span class="cart__product-details-label">{{ label }}</span>
+                <span>{{#joinValues options}}, {{/joinValues}}</span>
+              </li>
           {{/each}}
+          </ul>
+        </div>
+        <ul class="cart__action-buttons no-spacing">
+          <li><a href="#edit">Edit<i class="fas fa-pencil-alt"></i></a></li>
+          <li><a href="#remove">Remove<i class="fas fa-trash-alt"></i></a></li>
         </ul>
-      </div>
-      <ul class="cart__action-buttons no-spacing">
-        <li><a href="#edit">Edit<i class="fas fa-pencil-alt"></i></a></li>
-        <li><a href="#remove">Remove<i class="fas fa-trash-alt"></i></a></li>
-      </ul>
-    </li>
-  </script>
+      </li>
+    </script>
 
-  <script id="template-menu-product" type="text/x-handlebars-template">
-    <article class="product"> <!-- product -->
-
+    <script id="template-menu-product" type="text/x-handlebars-template">
+      <article class="product"> <!-- product -->
         <header class="product__header">
           <h3 class="product__name no-spacing">{{ name }} <i class="fas fa-chevron-down product__icon"></i></h3>
           <p class="product__base-price no-spacing">${{ price }}</p>
@@ -210,7 +262,7 @@
                   {{#each options}}
                   <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} (${{{ price }}})</option>
                   {{/each}}
-                </select>
+                  </select>
               </li>
               {{/ifEquals}}
               {{/each}}
@@ -236,80 +288,79 @@
             {{/each}}
           </div>
         </div>
+      </article> <!-- .product -->
+    </script>
 
-    </article> <!-- .product -->
-  </script>
-  <script id="template-booking-widget" type="text/x-handlebars-template">
-    <div class="booking-widget">
-      <h2 class="page__title no-spacing">Book a table</h2>
-      <form class="booking-form">
-        <div class="time-picker">
-          <div class="date-picker">
-            <label class="booking-option-title">Pick a date</label>
-            <input type="text" name="date">
-          </div>
-          <div class="hour-picker range-slider">
+    <script id="template-booking-widget" type="text/x-handlebars-template">
+      <div class="booking-widget">
+        <h2 class="page__title no-spacing">Book a table</h2>
+        <form class="booking-form">
+          <div class="time-picker">
+            <div class="date-picker">
+              <label class="booking-option-title">Pick a date</label>
+              <input type="text" name="date">
+            </div>
+            <div class="hour-picker range-slider">
               <div class="output"></div>
               <label class="booking-option-title">Pick a time</label>
-            <input type="range" name="hour" value="12" min="12" max="24" step="0.5">
+              <input type="range" name="hour" value="12" min="12" max="24" step="0.5">
+            </div>
           </div>
-        </div>
-        <div class="floor-plan">
-          <div class="object entry">entry</div>
-          <div class="object bar">bar</div>
-          <div class="object table" data-table="1">table-1</div>
-          <div class="object table table--round" data-table="2">table-2</div>
-          <div class="object table" data-table="3">table-3</div>
-        </div>
-        <div class="booking-options"> <!-- options -->
-          <label class="booking-option-title"> <!-- option-row -->
+          <div class="floor-plan">
+            <div class="object entry">entry</div>
+            <div class="object bar">bar</div>
+            <div class="object table" data-table="1">table-1</div>
+            <div class="object table table--round" data-table="2">table-2</div>
+            <div class="object table" data-table="3">table-3</div>
+          </div>
+          <div class="booking-options"> <!-- options -->
+            <label class="booking-option-title"> <!-- option-row -->
             People
-            <div class="widget-amount people-amount"> <!-- widget-amount -->
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-              <input class="amount" type="text" name="people" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
-            </div>
-          </label>
-          <label class="booking-option-title"> <!-- option-row -->
+              <div class="widget-amount people-amount"> <!-- widget-amount -->
+                <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+                <input class="amount" type="text" name="people" value="1">
+                <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              </div>
+            </label>
+            <label class="booking-option-title"> <!-- option-row -->
             Hours
-            <div class="widget-amount hours-amount"> <!-- widget-amount -->
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-              <input class="amount" type="text" name="hours" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
-            </div>
-          </label>
-          <div> <!-- option-row -->
-            <span class="booking-option-title">Starters</span>
-            <div class="checkbox"> <!-- checkbox -->
-              <label>
-                <input type="checkbox" name="starter" value="water">
-                <span class="checkbox__checkmark"></span>
+              <div class="widget-amount hours-amount"> <!-- widget-amount -->
+                <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+                <input class="amount" type="text" name="hours" value="1">
+                <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              </div>
+            </label>
+            <div> <!-- option-row -->
+              <span class="booking-option-title">Starters</span>
+              <div class="checkbox"> <!-- checkbox -->
+                <label>
+                  <input type="checkbox" name="starter" value="water">
+                  <span class="checkbox__checkmark"></span>
                 Water
-              </label>
-            </div>
-            <div class="checkbox"> <!-- checkbox -->
-              <label>
-                <input type="checkbox" name="starter" value="bread">
-                <span class="checkbox__checkmark"></span>
+                </label>
+              </div>
+              <div class="checkbox"> <!-- checkbox -->
+                <label>
+                  <input type="checkbox" name="starter" value="bread">
+                  <span class="checkbox__checkmark"></span>
                 Bread
-              </label>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="order-confirmation">
-          <input type="tel" name="phone" placeholder="Your phone">
-          <input type="text" name="address" placeholder="Your address">
-          <button type="submit" class="btn-secondary">Book table</button>
-        </div>
-      </form>
-    </div>
-  </script>
+          <div class="order-confirmation">
+            <input type="tel" name="phone" placeholder="Your phone">
+            <input type="text" name="address" placeholder="Your address">
+            <button type="submit" class="btn-secondary">Book table</button>
+          </div>
+        </form>
+      </div>
+    </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-  <script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="vendor/range-slider.min.js"></script>
-  <script src="js/app.js" type="module"></script>
-</div>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="vendor/range-slider.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+  </body>
 </html>
